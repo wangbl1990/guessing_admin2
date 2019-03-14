@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://dubbo-xsd.ppweb.com.cn/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://dubbo-xsd.ppweb.com.cn/dubbo.xsd">
+            
+
+    <dubbo:application name="mifan-guessing" />
+
+    <dubbo:registry protocol="zookeeper" address="${regCenter.serverList}"/>
+
+    <dubbo:monitor protocol="registry"/>
+
+    <dubbo:consumer timeout="5000"/>
+
+    <dubbo:reference id="guessingBannerService" version="1.0.0" interface="com.mifan.guessing.service.BannerService"/>
+
+    <dubbo:reference id="guessingOrderService" version="1.0.0" interface="com.mifan.guessing.service.OrderService"/>
+
+</beans>

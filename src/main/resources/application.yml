@@ -1,0 +1,13 @@
+server:
+    port: 7901
+spring:
+    application:
+        name: guessing_admin
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .jsp
+regCenter:
+    serverList: 172.16.0.73:2181
+#      serverList: 10.170.1.44:2181
+
